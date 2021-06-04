@@ -1,0 +1,239 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>property 4</title>
+    <link rel="stylesheet" href="../jquery/jquery-ui-1.12.1/jquery-ui.css">
+    <script src="../jquery/jquery.js"></script>
+    <script src="../jquery/jquery-ui-1.12.1/jquery-ui.js"></script>
+    <script src="../jquery/jquery_fav.js"></script>
+    <link rel="stylesheet" href="propertystyle.css"/>
+    
+    <script>
+    $( function() {
+      $( "#tabs" ).tabs();
+
+    } ); 
+
+    </script>
+  </head>
+<body>
+<header>
+    
+    <section class="head1">
+        <a href="../Home.html"><img src="home.png" width="50px" height="50px"></a>
+    </section>
+   
+
+    <section class="head2">
+        <nav>
+         <ul>
+            <li><a href="../flats.html" >FLAT</a></li>
+            <li><a href="../house.html" >HOUSE</a></li>
+            <li><a href="../aboutus.html">ABOUT US</a></li>
+        </ul>
+        </nav>
+    </section>
+    <section class="head3">
+        <a href="../search.html"><img src="search.png" width="35px" height="35px"></a>
+    </section>
+</header>
+ <section class="propert-details">
+    <section id="product">
+        <ul class="clear">
+            <li data-id="1">
+        <section class="propert-details-head">
+            <p id="prop4"></p>
+            <h1 id="property-name">PROPERTY 4</h1>
+            <p id="property-location">Crofton Road Orpington BR6</p>
+            <h3 id="property-price">Rs.435000.00</h3>
+
+            <p id="prop4">
+            <button class="favoritebtn">Add To Favorite</button>
+            <button class="removebtn">Remove Favorite</button>
+            </p>
+        </section>
+            </li>
+        </ul>
+    </section>  
+    
+    <section class="tab-view">
+        <section id="tabs">
+            <ul>
+                <li><a href="#propert-details-general-tab1">Images </a></li>
+                <li><a href="#propert-details-general-tab2">Description </a></li>
+                <li><a href="#propert-details-general-tab3">Floor plan </a></li>
+                <li><a href="#propert-details-general-tab4">Location </a></li>
+            </ul>
+    <section id="propert-details-general-tab1">
+        <img id="property-large" src="../images/prop2pic4.jpg">
+        <a href="../images/prop2pic2.jpg"><img id="property-small" src="../images/prop2pic2.jpg"></a>
+        <a href="../images/prop2pic3.jpg"><img id="property-small" src="../images/prop2pic3.jpg"></a>
+        <a href="../images/prop2pic4.jpg"><img id="property-small" src="../images/prop2pic4.jpg"></a>
+        <a href="../images/prop2pic5.jpg"><img id="property-small" src="../images/prop2pic5.jpg"></a>
+        <a href="../images/prop2pic6.jpg"><img id="property-small" src="../images/prop2pic6.jpg"></a>
+        
+        <br>
+        <section id="short-description">
+            4 BedRooms<br>With All facilities <br>
+        </section>
+    </section>
+    <section id="propert-details-general-tab2">
+        <p id="description">Attractive three bedroom semi-detached family home situated within 0.5 miles of Petts Wood station with fast trains to London and within easy walking distance of local shops, schools, bus routes and National Trust woodland. The property comprises; two receptions, fitted 18'9 x 10'1 kitchen/breakfast room and conservatory. The property also benefits from having a utility room and cloakroom. To the first floor there are three bedrooms and a family bathroom with separate WC. Additional features include double glazing, gas central heating and a well presented interior....</p>
+
+    </section>
+    <section id="propert-details-general-tab3">
+        <a href="../images/prop2plan.jpg"><img id="property-plan" src="../images/prop2plan.jpg"></a>
+        
+        
+    </section>
+    <section id="propert-details-general-tab4">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2490.6143520941027!2d0.0699023157650498!3d51.37338597961333!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47d8ab6ac2bdc8d1%3A0xb0dde3c09939f924!2sCrofton%20Rd%2C%20Orpington%2C%20UK!5e0!3m2!1sen!2slk!4v1609492038261!5m2!1sen!2slk" width="600" height="450" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+        
+    </section>
+
+    </section>
+</section>
+</section>
+<section class="fav-head">
+    <p id="fav-topic">FAVORITE</p>
+    <button class="viewFavourites">View</button>
+    <button class="clear-all">Clear All</button>
+</section>
+<section id="search_result2"></section>
+    <footer>
+    </footer>  
+    <script>
+        var prop ={
+        "properties": [
+            {
+                "name":"prop1",
+                "id":"prop1",
+                "type":"House",
+                "bedrooms":3,
+                "price":650000,
+                "tenure":"Freehold",
+                "description":"Attractive three bedroom semi-detached family home situated within 0.5 miles of Petts Wood station with fast trains to London and within easy walking distance of local shops, schools, bus routes and National Trust woodland. The property comprises; two receptions, fitted 18'9 x 10'1 kitchen/breakfast room and conservatory. The property also benefits from having a utility room and cloakroom. To the first floor there are three bedrooms and a family bathroom with separate WC. Additional features include double glazing, gas central heating and a well presented interior...",
+                "short_description":"3 Bed Rooms and 2 Bathroom",
+                "location":"Petts Wood Road, Petts Wood, Orpington",
+                "picture":"../images/prop1pic1small.jpg",
+                "url":"../properties/property1.html",
+                "added": {
+                    "month":"January",
+                    "day":12,
+                    "year":2018
+                }
+            },
+            {
+                "name":"prop2",
+                "id":"prop2",
+                "type":"Flat",
+                "bedrooms":2,
+                "price":299995,
+                "tenure":"Freehold",
+                "description":"Presented in excellent decorative order throughout is this two double bedroom, two bathroom, garden flat. <br>The modern fitted kitchen is open plan to the living room which boasts solid wooden floors and includes integrated appliances including a dishwasher & a washing machine. This large open plan benefits from bi folding doors onto a secluded private courtyard garden. Both bedrooms are double sized, and the family bathroom boasts a matching three piece suite a shower attachment over the bath. There is also a separate wet room. There are walnut doors throughout and wiring for Sky TV/aerial points in the living room/kitchen and both bedrooms.<br>This apartment being only five years old, is still under a 10 year building guarantee...",
+                "short_description":"3 Bed Rooms and 2 Bathroom",
+                "location":"Crofton Road Orpington BR6",
+                "picture":"../images/prop2pic1small.jpg",
+                "url":"../properties/property2.html",
+                "added": {
+                    "month":"September",
+                    "day":14,
+                    "year":2018
+                }
+            },
+            {
+                "name":"prop3",
+                "id":"prop3",
+                "type":"House",
+                "bedrooms":3,
+                "price":650000,
+                "tenure":"Freehold",
+                "description":"Presented in excellent decorative order throughout is this two double bedroom, two bathroom, garden flat. <br>The modern fitted kitchen is open plan to the living room which boasts solid wooden floors and includes integrated appliances including a dishwasher & a washing machine. This large open plan benefits from bi folding doors onto a secluded private courtyard garden. Both bedrooms are double sized, and the family bathroom boasts a matching three piece suite a shower attachment over the bath. There is also a separate wet room. There are walnut doors throughout and wiring for Sky TV/aerial points in the living room/kitchen and both bedrooms.<br>This apartment being only five years old, is still under a 10 year building guarantee...",
+                "short_description":"3 Bed Rooms and 2 Bathroom",
+                "location":"Crofton Road Orpington BR6",
+                "picture":"../images/prop1pic1small.jpg",
+                "url":"../properties/property3.html",
+                "added": {
+                    "month":"October",
+                    "day":14,
+                    "year":2018
+                }
+            },
+            {
+                "name":"prop4",
+                "id":"prop4",
+                "type":"Flat",
+                "bedrooms":4,
+                "price":435000,
+                "tenure":"Freehold",
+                "description":"Presented in excellent decorative order throughout is this two double bedroom, two bathroom, garden flat. <br>The modern fitted kitchen is open plan to the living room which boasts solid wooden floors and includes integrated appliances including a dishwasher & a washing machine. This large open plan benefits from bi folding doors onto a secluded private courtyard garden. Both bedrooms are double sized, and the family bathroom boasts a matching three piece suite a shower attachment over the bath. There is also a separate wet room. There are walnut doors throughout and wiring for Sky TV/aerial points in the living room/kitchen and both bedrooms.<br>This apartment being only five years old, is still under a 10 year building guarantee...",
+                "short_description":"3 Bed Rooms and 2 Bathroom",
+                "location":"Crofton Road Orpington BR6",
+                "picture":"../images/prop2pic1small.jpg",
+                "url":"../properties/property4.html",
+                "added": {
+                    "month":"April",
+                    "day":14,
+                    "year":2018
+                }
+            },
+            {
+                "name":"prop5",
+                "id":"prop5",
+                "type":"House",
+                "bedrooms":3,
+                "price":565000,
+                "tenure":"Freehold",
+                "description":"Presented in excellent decorative order throughout is this two double bedroom, two bathroom, garden flat. <br>The modern fitted kitchen is open plan to the living room which boasts solid wooden floors and includes integrated appliances including a dishwasher & a washing machine. This large open plan benefits from bi folding doors onto a secluded private courtyard garden. Both bedrooms are double sized, and the family bathroom boasts a matching three piece suite a shower attachment over the bath. There is also a separate wet room. There are walnut doors throughout and wiring for Sky TV/aerial points in the living room/kitchen and both bedrooms.<br>This apartment being only five years old, is still under a 10 year building guarantee...",
+                "short_description":"3 Bed Rooms and 2 Bathroom",
+                "location":"Crofton Road Orpington BR6",
+                "picture":"../images/prop1pic1small.jpg",
+                "url":"../properties/property5.html",
+                "added": {
+                    "month":"May",
+                    "day":14,
+                    "year":2018
+                }
+            },
+            {
+                "name":"prop6",
+                "id":"prop6",
+                "type":"Flat",
+                "bedrooms":6,
+                "price":900000,
+                "tenure":"Freehold",
+                "short_description":"3 Bed Rooms and 2 Bathroom",
+                "description":"Presented in excellent decorative order throughout is this two double bedroom, two bathroom, garden flat. <br>The modern fitted kitchen is open plan to the living room which boasts solid wooden floors and includes integrated appliances including a dishwasher & a washing machine. This large open plan benefits from bi folding doors onto a secluded private courtyard garden. Both bedrooms are double sized, and the family bathroom boasts a matching three piece suite a shower attachment over the bath. There is also a separate wet room. There are walnut doors throughout and wiring for Sky TV/aerial points in the living room/kitchen and both bedrooms.<br>This apartment being only five years old, is still under a 10 year building guarantee...",
+                "location":"Crofton Road Orpington BR6",
+                "picture":"../images/prop2pic1small.jpg",
+                "url":"../properties/property6.html",
+                "added": {
+                    "month":"August",
+                    "day":14,
+                    "year":2018
+                }
+            },
+            {
+                "name":"prop7",
+                "id":"prop7",
+                "type":"House",
+                "bedrooms":4,
+                "price":430000,
+                "tenure":"Freehold",
+                "short_description":"3 Bed Rooms and 2 Bathroom",
+                "description":"Presented in excellent decorative order throughout is this two double bedroom, two bathroom, garden flat. <br>The modern fitted kitchen is open plan to the living room which boasts solid wooden floors and includes integrated appliances including a dishwasher & a washing machine. This large open plan benefits from bi folding doors onto a secluded private courtyard garden. Both bedrooms are double sized, and the family bathroom boasts a matching three piece suite a shower attachment over the bath. There is also a separate wet room. There are walnut doors throughout and wiring for Sky TV/aerial points in the living room/kitchen and both bedrooms.<br>This apartment being only five years old, is still under a 10 year building guarantee...",
+                "location":"Crofton Road Orpington BR6",
+                "picture":"../images/prop1pic1small.jpg",
+                "url":"../properties/property7.html",
+                "added": {
+                    "month":"December",
+                    "day":14,
+                    "year":2018
+                }
+            }
+    ]}
+    </script> 
+    </body>
+    </html>

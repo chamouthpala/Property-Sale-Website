@@ -1,0 +1,401 @@
+
+/*----------------------------------------------------------navigation bar styles---------------------------------------------------*/
+.body{
+  background-color: rgb(198, 218, 235);
+}
+
+header{
+    background-color: aliceblue;
+    color: blueviolet;
+    font-size: 20px;
+    height: 70px;
+    padding-top: 5px;
+
+    
+}
+
+
+.head1{
+    position: absolute;
+    left: 0;
+    width: 25%;
+    
+}
+.head2{
+    position: relative;
+    left: 40%;
+    width: 45%;
+}
+.head3{
+    position: relative;
+    top: -45px;
+    left: 93%;
+    width: 7%;
+   
+}
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 5px;
+    overflow: hidden;
+    
+    
+  }
+  nav li {
+    float: left;
+  }
+  
+  
+nav li a {
+    display: block;
+    text-align: center;
+    font-size: 20px;
+    padding: 12px 14px;
+    text-decoration: none;
+
+  }
+  
+nav li a:hover:not(.active) {
+    background-color: rgb(139, 138, 138);
+  }
+  
+ nav .active {
+    background-color: #4c4f50;
+  }
+
+
+  /*----------------------------------------------------body-----------------------------------------*/
+
+  .background{background:url(bg1.jpg);
+    height: 550px;
+    width: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: scroll;
+	
+    }
+
+
+    .part1{
+      position: absolute;
+      top: 40%;
+      left: 35%;
+      color: rgb(243, 26, 26);
+      font-family: fantasy;
+      
+  }
+  .topic{
+      position: relative;
+      width: 500px;
+      height: 80px;
+      background-color: rgba(37, 37, 37, 0.6);
+      font-size: 50px;
+      text-align: center;
+  }
+  .serach1 button {
+    background: rgb(87, 66, 66);
+    font-size: 17px;
+    border: none;
+    cursor: pointer;
+    position: relative;
+    left: 35%;
+    top: 100%;
+
+  }
+  .serach1 button:hover {
+    background: rgb(48, 36, 36);
+  }
+  .showcase{
+    height: 550px;
+    width: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: scroll;
+  }
+  .showcase_topic{
+    text-align: center;
+    font-size: 30px;
+    color: #4c4f50;
+    background-color: rgb(174, 238, 238);
+    position: relative;
+    top: auto;
+    margin-top: 30px;
+    margin-bottom: 30px;
+  }
+  
+
+  /*-------------------------------property-tile pages styles--------------------------*/
+
+
+  .topic-head{
+    text-align: center;
+    font-size: 30px;
+    color: #4c4f50;
+    background-color: rgb(174, 238, 238);
+
+  }
+  .property_tile{
+    
+    border: 5px solid #305a68;
+    float: left;
+    width: 20%;
+    position: relative;
+    margin-left: 8.5%;
+     
+    
+  }
+  #property_tile_image{
+    width: 85%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  #bedrooms{
+    color: darkslategrey;
+    font-size: 15px;
+    position: relative;
+    left: 2%;
+    top: auto;
+  }
+  #location{
+    color: darkslategrey;
+    font-size: 15px;
+    position: relative;
+    left: 67%;
+    top: -30px;
+    
+  }
+  #price{
+    color: black;
+    font-size: 25px;
+    position: relative;
+    top: -30px;
+    left: 2%;
+  }
+  #name{
+    color: rgb(97, 46, 46);
+    font-size: 23px;
+    position: relative;
+    top: -50px;
+    left: 2%;
+  }
+  footer{
+    position: relative;
+    top: auto;
+    background-color: #717c81;
+  }
+
+  #bottom_footer{
+    text-align: center;
+    font-size: 15px;
+    background-color: bisque;
+    color: #000;
+  }
+  /*------------------------------------search page styles-------------------------*/
+
+  .background-search{
+    background:url(bg3.jpg);
+    height: 1200px;
+    width: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: scroll;
+	
+    }
+    .search-bar{
+    background-color: rgba(170, 169, 169, 0.5);
+    border: 5px solid #65cad1;
+    
+
+    }
+    
+    #search-topic{
+    text-align: center;
+    font-size: 30px;
+    color: rgb(0, 0, 0);
+
+    }
+    #property_type{
+      text-align: center;
+      font-size: 25px;
+      color: rgb(4, 46, 35);
+      
+    }
+    #propertyselect{
+      position: relative;
+      left: 37%;
+    }
+    
+    label{
+      font-size: 25px;
+      color: rgb(4, 46, 35);
+    }
+    #bedroomsselect{
+      position: relative;
+      left: 15%;
+    }
+    #priceselect{
+      text-align: center;
+
+    }
+    #slider-range{
+      width: 400px;
+      position: relative;
+      left: 30%;
+    }
+    #dateselect{
+      text-align: center;
+      font-size: 25px;
+      color: rgb(4, 46, 35);
+
+    }
+    #date_select{
+      position: relative;
+      left: 40%;
+    }
+    #spinnermin{
+      width: 100px;
+      height: 10px;
+    }
+    #spinnermax{
+      width: 100px;
+      height: 10px;
+    }
+    #Search{
+      margin-top: 5%;
+      width: 100px;
+      height: 30px;
+      position: relative;
+      left: 50%;
+
+    }
+    #search_result{
+      float: left;
+      width: 20%;
+      border: 5px solid #305a68;
+      margin-left: 8.5%;
+      margin-bottom: 2%;
+    }
+    .sec1{
+      float: left;
+      width: 68%;
+
+    }
+   
+    ul li{
+      text-decoration: none;
+    }
+    #name1{
+      text-align: center;
+      text-decoration: none;
+    }
+    #img{
+      width: 85%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    }
+    
+    #price2{
+
+    }
+    #des2{
+
+    }
+    /*------------------------------------Favorite bar-----------------------------*/
+
+  .favorite{
+    position: fixed;
+    left: 70%;
+    float: right;
+    width: 30%;
+    border: 5px solid #305a68;
+  }
+  #fav-topic{
+    text-align: center;
+    font-size: 30px;
+    color: bisque;
+
+  }
+  .clear-all{
+    position: relative;
+    left: 65%;
+  }
+  #img2{
+    float: left;
+    width: 50%;
+  }
+    /*---------------------------------------------------social Media Style---------------------------------------------------------*/
+
+  .fa {
+      padding: 5px;
+      width: 30px;
+      text-align: center;
+      text-decoration: none;
+      }
+  .fa:hover {
+        opacity: 0.7;
+  }
+  .fa-facebook {
+      color:rgb(61, 61, 61);
+  }
+  .fa-instagram{
+    color:rgb(61, 61, 61);
+  }
+  .fa-twitter{
+    color:rgb(61, 61, 61);
+  }
+  .fa-linkedin{
+    color:rgb(61, 61, 61);
+  }
+
+  @media screen and (max-width: 700px) {
+    .part1{
+      position: absolute;
+        top: 20%;
+        left: 15%;
+        color: rgb(27, 3, 3);
+        font-family: fantasy;
+  
+    }
+    .topic{
+      position: relative;
+      width: 250px;
+      height: 40px;
+      background-color: rgba(37, 37, 37, 0.6);
+      font-size: 25px;
+      text-align: center;
+  }
+  .serach1 button {
+    background: rgb(87, 66, 66);
+    font-size: 9px;
+    border: none;
+    cursor: pointer;
+    position: relative;
+    left: 50%;
+    top: 500%;
+
+  }
+  #property_type{
+    
+    font-size: 15px;
+    color: rgb(218, 25, 73);
+  }
+  #propertyselect{
+    position: relative;
+    left: 27%;
+  }
+  
+  label{
+    font-size: 15px;
+    color: rgb(4, 46, 35);
+  }
+
+  }
+
+
+
+  

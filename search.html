@@ -1,0 +1,324 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Search</title>
+    <link rel="stylesheet" href="style.css"/>
+    <link rel="stylesheet" href="jquery\jquery-ui-1.12.1\jquery-ui.css">
+    <script src="jquery\jquery.js"></script>
+    <script src="jquery\jquery-ui-1.12.1\jquery-ui.js"></script>
+    <script src="jquery\jquery_fav.js"></script>
+    
+<script>
+    
+    $(function() {
+        $("#property").selectmenu();
+    });
+
+    $(function() {
+        $("#date").selectmenu();
+    });
+
+    $(function() {
+        $("#spinnermin").spinner({
+            min: 1,
+            max: 5,
+            spin: function(event, ui) {
+                $(this).change();
+            }
+        });
+    });
+
+    $(function() {
+        $("#spinnermax").spinner({
+            min: 1,
+            max: 7,
+            spin: function(event, ui) {
+                $(this).change();
+            }
+        });
+    });
+    $( function() {
+        $( "#slider-range" ).slider({
+            range: true,
+            min: 0,
+            max: 1200000,
+            values: [ 250000, 750000 ],
+            slide: function( event, ui ) {
+                $( "#amount" ).val( "Rs." + ui.values[ 0 ] + " - RS." + ui.values[ 1 ] );
+            }
+        });
+        $( "#amount" ).val( "RS." + $( "#slider-range" ).slider( "values", 0 ) +
+        " - RS." + $( "#slider-range" ).slider( "values", 1 ) );
+    } );
+    $(function(){
+        $("#Search").on("click",function(){
+            //getting input values
+          var propertyType = $("#property").val();
+          var propertyMinBed = $("#spinnermin").val();
+          var propertyMaxBed = $("#spinnermax").val();
+          var propertyDate = $("#date").val();
+          var propertyMinPrice = $("#slider-range").slider("option","values")[0];
+          var propertyMaxPrice = $("#slider-range").slider("option","values")[1];
+
+          var result="<section id='result'>";
+            for (var i in prop.properties){
+                if((propertyType == prop.properties[i].type) || (propertyType=="Any"))
+                     if (( propertyMaxBed >= prop.properties[i].bedrooms && propertyMinBed <= prop.properties[i].bedrooms ))
+                         if (( propertyDate == prop.properties[i].added.month) || (propertyDate=="Anytime"))
+                             if (( prop.properties[i].price >= propertyMinPrice && prop.properties[i].price <= propertyMaxPrice ))
+                                 {
+                                    {
+                                        {
+                                            {
+                                                //set output
+                                            result+="<section id='search_result'><h2 id ='name1'>" + prop.properties[i].name +"</h2>"+"<img id ='img' src=" + prop.properties[i].picture + ">"+"<h2 id='price2'>" + "£" + prop.properties[i].price +"</h2>"  + "<p id ='des2'>" + prop.properties[i].short_description + "</p>" + "<button><a href='" + prop.properties[i].url + "'> Read more </a></button></section>";
+                                    
+                                     } } } } }
+            result+="</section>";
+            //adding result to the html page
+            document.getElementById( "search_one" ).innerHTML = result;
+        });
+    });
+
+
+</script>
+</head>
+<body>
+    <header>
+    <!--navigation section-->
+        <section class="head1">
+            <a href="Home.html"><img src="home.png" width="50px" height="50px"></a>
+        </section>
+   
+
+        <section class="head2">
+            <nav>
+            <ul>
+                <li><a href="flats.html" >FLAT</a></li>
+                <li><a href="house.html" >HOUSE</a></li>
+                <li><a href="aboutus.html">ABOUT US</a></li>
+            </ul>
+            </nav>
+        </section>
+        <section class="head3">
+            <a href="search.html"><img src="search.png" width="35px" height="35px"></a>
+        </section>
+    </header>
+
+    <!--search form section-->
+
+<section class="background-search">
+    <section class="sec1">
+    
+    <section  class="search-bar">
+        <p id="search-topic">ADVANCED SEARCH</p>
+
+        <p id="property_type">Select Property Type:</p>
+            <section id="propertyselect">
+                <select name="property" id="property">
+                    <option value="Any" selected>Any</option>
+                    <option value="Flat">Flat</option>
+                    <option value="House">House</option>
+                    
+                </select>
+            </section>
+    <p id="bedroomsselect">
+        <label for="spinnermin">Min Bedrooms:</label>
+        <input id="spinnermin" name="value">
+        <label for="spinnermax">Max Bedrooms:</label>
+        <input id="spinnermax" name="value">
+      </p>
+      <p id="priceselect">
+        <label for="amount">Select Price Range:</label>
+        <input type="text" id="amount" readonly style="border:0; color:#81e0c9; font-weight:bold;width: 150px;">
+      </p>
+       
+      <section id="slider-range"></section>
+      <section class="date">
+        <p id="dateselect">Date Added</p>
+        <section id="date_select">
+            <select name="date" id="date">
+                <option value="Anytime" selected>Anytime</option>
+                <option value='{"prop":[January,February,March,April]}'> January - April </option>
+                <option value="May", "June", "July", "August">May - August </option>
+                <option value="September", "October", "November", "December">September - December </option>
+            
+            </select>
+        </section>
+    </section>
+
+    <button id="Search">Search</button>
+    
+</section> 
+    <section id="search_one"></section>
+    </section>
+
+
+<!--Favorite section-->
+    <section class="favorite">
+        <section class="fav-basket">
+            <section class="fav-head">
+                    <p id="fav-topic">FAVORITE</p>
+                    <button class="viewFavourites">View</button>
+                    <button class="clear-all">Clear All</button>
+            </section>
+            <section id="search_result2"></section>
+        </section>
+    </section>
+</section>
+
+<footer>
+
+</footer> 
+<script>
+    //adding JSON file
+    var prop ={
+	"properties": [
+        {
+            "name":"prop1",
+            "id":"prop1",
+			"type":"House",
+            "bedrooms":3,
+			"price":650000,
+			"tenure":"Freehold",
+			"description":"Attractive three bedroom semi-detached family home situated within 0.5 miles of Petts Wood station with fast trains to London and within easy walking distance of local shops, schools, bus routes and National Trust woodland. The property comprises; two receptions, fitted 18'9 x 10'1 kitchen/breakfast room and conservatory. The property also benefits from having a utility room and cloakroom. To the first floor there are three bedrooms and a family bathroom with separate WC. Additional features include double glazing, gas central heating and a well presented interior...",
+            "short_description":"3 Bed Rooms and 2 Bathroom",
+            "location":"Petts Wood Road, Petts Wood, Orpington",
+			"picture":"images/prop1pic1small.jpg",
+			"url":"properties/property1.html",
+            "added": {
+                "month":"January",
+                "day":12,
+                "year":2018
+            }
+        },
+		{
+            "name":"prop2",
+            "id":"prop2",
+			"type":"Flat",
+            "bedrooms":2,
+			"price":299995,
+			"tenure":"Freehold",
+			"description":"Presented in excellent decorative order throughout is this two double bedroom, two bathroom, garden flat. <br>The modern fitted kitchen is open plan to the living room which boasts solid wooden floors and includes integrated appliances including a dishwasher & a washing machine. This large open plan benefits from bi folding doors onto a secluded private courtyard garden. Both bedrooms are double sized, and the family bathroom boasts a matching three piece suite a shower attachment over the bath. There is also a separate wet room. There are walnut doors throughout and wiring for Sky TV/aerial points in the living room/kitchen and both bedrooms.<br>This apartment being only five years old, is still under a 10 year building guarantee...",
+            "short_description":"2 Bed Rooms and 1 Bathroom",
+            "location":"Crofton Road Orpington BR6",
+			"picture":"images/prop2pic1small.jpg",
+			"url":"properties/property2.html",
+            "added": {
+                "month":"September",
+                "day":14,
+                "year":2018
+            }
+        },
+        {
+            "name":"prop3",
+            "id":"prop3",
+			"type":"House",
+            "bedrooms":3,
+			"price":650000,
+			"tenure":"Freehold",
+			"description":"Presented in excellent decorative order throughout is this two double bedroom, two bathroom, garden flat. <br>The modern fitted kitchen is open plan to the living room which boasts solid wooden floors and includes integrated appliances including a dishwasher & a washing machine. This large open plan benefits from bi folding doors onto a secluded private courtyard garden. Both bedrooms are double sized, and the family bathroom boasts a matching three piece suite a shower attachment over the bath. There is also a separate wet room. There are walnut doors throughout and wiring for Sky TV/aerial points in the living room/kitchen and both bedrooms.<br>This apartment being only five years old, is still under a 10 year building guarantee...",
+            "short_description":"3 Bed Rooms and 2 Bathroom",
+            "location":"Crofton Road Orpington BR6",
+			"picture":"images/prop2pic1small.jpg",
+			"url":"properties/property3.html",
+            "added": {
+                "month":"October",
+                "day":14,
+                "year":2018
+            }
+        },
+        {
+            "name":"prop4",
+            "id":"prop4",
+			"type":"Flat",
+            "bedrooms":4,
+			"price":435000,
+			"tenure":"Freehold",
+			"description":"Presented in excellent decorative order throughout is this two double bedroom, two bathroom, garden flat. <br>The modern fitted kitchen is open plan to the living room which boasts solid wooden floors and includes integrated appliances including a dishwasher & a washing machine. This large open plan benefits from bi folding doors onto a secluded private courtyard garden. Both bedrooms are double sized, and the family bathroom boasts a matching three piece suite a shower attachment over the bath. There is also a separate wet room. There are walnut doors throughout and wiring for Sky TV/aerial points in the living room/kitchen and both bedrooms.<br>This apartment being only five years old, is still under a 10 year building guarantee...",
+            "short_description":"4 Bed Rooms and 2 Bathroom",
+            "location":"Crofton Road Orpington BR6",
+			"picture":"images/prop2pic1small.jpg",
+			"url":"properties/property4.html",
+            "added": {
+                "month":"April",
+                "day":14,
+                "year":2018
+            }
+        },
+        {
+            "name":"prop5",
+            "id":"prop5",
+			"type":"House",
+            "bedrooms":3,
+			"price":565000,
+			"tenure":"Freehold",
+			"description":"Presented in excellent decorative order throughout is this two double bedroom, two bathroom, garden flat. <br>The modern fitted kitchen is open plan to the living room which boasts solid wooden floors and includes integrated appliances including a dishwasher & a washing machine. This large open plan benefits from bi folding doors onto a secluded private courtyard garden. Both bedrooms are double sized, and the family bathroom boasts a matching three piece suite a shower attachment over the bath. There is also a separate wet room. There are walnut doors throughout and wiring for Sky TV/aerial points in the living room/kitchen and both bedrooms.<br>This apartment being only five years old, is still under a 10 year building guarantee...",
+            "short_description":"3 Bed Rooms and 2 Bathroom",
+            "location":"Crofton Road Orpington BR6",
+			"picture":"images/prop2pic1small.jpg",
+			"url":"properties/property5.html",
+            "added": {
+                "month":"May",
+                "day":14,
+                "year":2018
+            }
+        },
+        {
+            "name":"prop6",
+            "id":"prop6",
+			"type":"Flat",
+            "bedrooms":6,
+			"price":900000,
+			"tenure":"Freehold",
+            "short_description":"6 Bed Rooms and 2 Bathroom",
+            "description":"Presented in excellent decorative order throughout is this two double bedroom, two bathroom, garden flat. <br>The modern fitted kitchen is open plan to the living room which boasts solid wooden floors and includes integrated appliances including a dishwasher & a washing machine. This large open plan benefits from bi folding doors onto a secluded private courtyard garden. Both bedrooms are double sized, and the family bathroom boasts a matching three piece suite a shower attachment over the bath. There is also a separate wet room. There are walnut doors throughout and wiring for Sky TV/aerial points in the living room/kitchen and both bedrooms.<br>This apartment being only five years old, is still under a 10 year building guarantee...",
+			"location":"Crofton Road Orpington BR6",
+			"picture":"images/prop2pic1small.jpg",
+			"url":"properties/property6.html",
+            "added": {
+                "month":"August",
+                "day":14,
+                "year":2018
+            }
+        },
+        {
+            "name":"prop7",
+            "id":"prop7",
+			"type":"House",
+            "bedrooms":4,
+			"price":430000,
+			"tenure":"Freehold",
+            "short_description":"4 Bed Rooms and 2 Bathroom",
+            "description":"Presented in excellent decorative order throughout is this two double bedroom, two bathroom, garden flat. <br>The modern fitted kitchen is open plan to the living room which boasts solid wooden floors and includes integrated appliances including a dishwasher & a washing machine. This large open plan benefits from bi folding doors onto a secluded private courtyard garden. Both bedrooms are double sized, and the family bathroom boasts a matching three piece suite a shower attachment over the bath. There is also a separate wet room. There are walnut doors throughout and wiring for Sky TV/aerial points in the living room/kitchen and both bedrooms.<br>This apartment being only five years old, is still under a 10 year building guarantee...",
+			"location":"Crofton Road Orpington BR6",
+			"picture":"images/prop2pic1small.jpg",
+			"url":"properties/property7.html",
+            "added": {
+                "month":"December",
+                "day":14,
+                "year":2018
+            }
+        }
+]}
+</script> 
+<!--footer section and social media section-->
+<footer>
+    <section class="icon_bar">
+        <a href="https://www.facebook.com" target="_blank" class="facebook"><i class="fa fa-facebook"></i></a> 
+        <a href="https://twitter.com" target="_blank" class="twitter"><i class="fa fa-twitter"></i></a> 
+        <a href="mailto:chamodya.20191305@iit.ac.lk" class="google"><i class="fa fa-google"></i></a> 
+        <a href="https://www.linkedin.com" target="_blank" class="linkedin"><i class="fa fa-linkedin"></i></a>
+        <a href="https://www.instagram.com" target="_blank"  class="instagram"><i class="fa fa-instagram"></i></a>
+      </section>
+
+      <section id="bottom_footer">
+          <p>2020 january 4 By Uthpala Bandara</p>
+      </section>
+
+</footer> 
+
+</body>
+
+</html>

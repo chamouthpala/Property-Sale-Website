@@ -1,0 +1,138 @@
+body{
+    background-color: #b3b8b9;
+}
+/*----------------------------------------------------------navigation bar styles---------------------------------------------------*/
+header{
+    background-color: aliceblue;
+    color: blueviolet;
+    font-size: 20px;
+    height: 70px;
+    padding-top: 5px;
+
+    
+}
+li { list-style: none }
+.head1{
+    position: absolute;
+    left: 0;
+    width: 25%;
+    
+}
+.head2{
+    position: relative;
+    left: 40%;
+    width: 45%;
+}
+.head3{
+    position: relative;
+    top: -45px;
+    left: 93%;
+    width: 7%;
+}
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 5px;
+    overflow: hidden;
+    
+    
+  }
+  nav li {
+    float: left;
+  }
+  
+  
+nav li a {
+    display: block;
+    
+    text-align: center;
+    font-size: 20px;
+    padding: 12px 14px;
+    text-decoration: none;
+
+  }
+  
+nav li a:hover:not(.active) {
+    background-color: rgb(139, 138, 138);
+  }
+  
+ nav .active {
+    background-color: #4c4f50;
+  }
+/*--------------------------------------------------property-details--------------------------------------------------*/
+
+.propert-details{
+    float: left;
+    width: 70%;
+    border: 2px solid #4c4f50;
+    margin-top: 40px;
+}
+#property-name{
+    text-align: center;
+    font-size: 30px;
+    color: blueviolet;
+    
+}
+#property-location{
+    color: darkslategrey;
+    font-size: 20px;
+    position: relative;
+    top: -30px;
+
+}
+#property-price{
+    color: black;
+    font-size: 25px;
+    position: relative;
+    top: -30px;
+    left: 2%;
+
+}
+ #propert-details-general{
+    border: 2px solid #4c4f50;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 90%;
+} 
+#property-plan{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 70%;
+
+}
+#property-large{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 75%;
+    
+}
+#property-small{
+    width: 19%;
+    height: 100px;
+}
+
+
+/*--------------------------------favorite tab----------------------------------------*/
+
+.favorite{
+    float: right;
+    width: 25%;
+    border: 2px solid #4c4f50;
+    margin-top: 40px;
+
+}
+
+  #fav-topic{
+    text-align: center;
+    font-size: 30px;
+    color: bisque;
+
+  }
+  .clear-all{
+    position: relative;
+    left: 15%;
+  }
+  
